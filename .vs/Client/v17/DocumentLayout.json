@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|c:\\users\\phuong\\projects\\multiplayerdemo\\assets\\scripts\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Client.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Client.cs",
+              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Client.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Client.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAIAwwBEAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T04:22:04.973Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

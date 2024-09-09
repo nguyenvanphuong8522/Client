@@ -14,7 +14,8 @@ public class SignInUi : MonoBehaviour
     public string _password;
 
     [SerializeField] private Button btnSignIn;
-
+    [SerializeField] private GameObject btnChatRoom;
+     
     private void Awake()
     {
         btnSignIn.onClick.AddListener(OnBtnSignIn);
@@ -27,6 +28,10 @@ public class SignInUi : MonoBehaviour
         Debug.Log($"Username: {_userName} - Password: {_password}");
         client.SetNamePassword(_userName, _password);
         client.Connect();
+    }
+    public void ShowBtnChatRoom()
+    {
+        btnChatRoom.SetActive(true);
     }
 
     public void Hide()

@@ -9,17 +9,12 @@ public class Player : MonoBehaviour
     public int Id { get; set; }
 
     public float moveSpeed = 5f;
-    private Rigidbody rb;
     public float moveHorizontal;
     public float moveVertical;
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector3(moveHorizontal * moveSpeed, rb.velocity.y, moveVertical * moveSpeed);
+        transform.Translate(new Vector3(moveHorizontal * moveSpeed * Time.fixedDeltaTime, 0, moveVertical * moveSpeed * Time.fixedDeltaTime));
     }
 }

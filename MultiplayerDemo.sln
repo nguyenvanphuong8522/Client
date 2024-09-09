@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniTask.Linq", "UniTask.Linq.csproj", "{D3268554-F932-AD83-1D5D-FD8B6DAAB3A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{75E14392-F52A-C331-7C9C-AEBC0346DE53}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniTask", "UniTask.csproj", "{573D3032-EB80-B63D-27E1-C666C6555BC8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniTask.Addressables", "UniTask.Addressables.csproj", "{C9349D19-C749-767F-1FCD-A5DBD2191502}"
@@ -25,6 +27,10 @@ Global
 		{D3268554-F932-AD83-1D5D-FD8B6DAAB3A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3268554-F932-AD83-1D5D-FD8B6DAAB3A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3268554-F932-AD83-1D5D-FD8B6DAAB3A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75E14392-F52A-C331-7C9C-AEBC0346DE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75E14392-F52A-C331-7C9C-AEBC0346DE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75E14392-F52A-C331-7C9C-AEBC0346DE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75E14392-F52A-C331-7C9C-AEBC0346DE53}.Release|Any CPU.Build.0 = Release|Any CPU
 		{573D3032-EB80-B63D-27E1-C666C6555BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{573D3032-EB80-B63D-27E1-C666C6555BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{573D3032-EB80-B63D-27E1-C666C6555BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU

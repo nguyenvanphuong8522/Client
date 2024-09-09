@@ -1,9 +1,11 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ChatRoom
     - Client
     - Player
     - SignInUi
+    - SignUpUi
     - SpawnManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -55,7 +57,9 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Style
     - TMPro.VertexGradient
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
@@ -69,7 +73,25 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.SpriteState
-  methodsToPreserve: []
+  methodsToPreserve:
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   sceneClasses:
     Assets/Scenes/ClientScene.unity:
     - Class: 1
@@ -92,8 +114,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
-    - Class: 54
-      Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
     - Class: 65
@@ -107,48 +127,50 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1606}
+      Script: {instanceID: 1608}
     - Class: 114
-      Script: {instanceID: 1736}
+      Script: {instanceID: 1746}
     - Class: 114
-      Script: {instanceID: 2210}
+      Script: {instanceID: 2224}
     - Class: 114
-      Script: {instanceID: 2644}
+      Script: {instanceID: 2666}
     - Class: 114
-      Script: {instanceID: 2854}
+      Script: {instanceID: 2880}
     - Class: 114
-      Script: {instanceID: 3168}
+      Script: {instanceID: 3198}
     - Class: 114
-      Script: {instanceID: 3670}
+      Script: {instanceID: 3710}
     - Class: 114
-      Script: {instanceID: 4184}
+      Script: {instanceID: 4244}
     - Class: 114
-      Script: {instanceID: 4198}
+      Script: {instanceID: 4260}
     - Class: 114
-      Script: {instanceID: 4470}
+      Script: {instanceID: 4536}
     - Class: 114
-      Script: {instanceID: 4748}
+      Script: {instanceID: 4822}
     - Class: 114
-      Script: {instanceID: 5000}
+      Script: {instanceID: 5086}
     - Class: 114
-      Script: {instanceID: 5182}
+      Script: {instanceID: 5272}
     - Class: 114
-      Script: {instanceID: 5442}
+      Script: {instanceID: 5542}
     - Class: 114
-      Script: {instanceID: 5756}
+      Script: {instanceID: 5858}
     - Class: 114
-      Script: {instanceID: 5912}
+      Script: {instanceID: 6020}
     - Class: 114
-      Script: {instanceID: 6240}
+      Script: {instanceID: 6352}
     - Class: 114
-      Script: {instanceID: 7036}
+      Script: {instanceID: 7156}
     - Class: 114
-      Script: {instanceID: 7096}
+      Script: {instanceID: 7216}
+    - Class: 114
+      Script: {instanceID: 36290}
+    - Class: 114
+      Script: {instanceID: 48832}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
-      Script: {instanceID: 0}
-    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -471,7 +493,7 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExit2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 30acd67b1109e035e1d986a75b69dba7
+      Hash: 50c7f9ce6412d07360836895b2e9f4e8
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Client
@@ -585,7 +607,7 @@ ScriptsOnlyBuild:
     className: UnityOnPointerClickMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 97b3278f9226356ffa7d573282b1fa81
+      Hash: 1a9c31ea506d52e050b546b7fd411601
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SignInUi
@@ -1033,6 +1055,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 6a982318c121f0aefb471a56d110e5f3
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ChatRoom
+  - hash:
+      serializedVersion: 2
+      Hash: 22c55c3b20cbfdc790a280966e8402c6
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SignUpUi
   platform: 19
   scenePathNames:
   - Assets/Scenes/ClientScene.unity

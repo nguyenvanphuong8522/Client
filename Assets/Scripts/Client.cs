@@ -27,7 +27,7 @@ public class Client : MonoBehaviour
 
     private bool canMove;
 
-    //private bool isConnected;
+    public bool isConnected;
 
     private string userName;
 
@@ -35,7 +35,11 @@ public class Client : MonoBehaviour
 
     private List<Category> categories = new List<Category>();
 
-    [SerializeField] private SignInUi ui;
+    [SerializeField] private SignInUi uiSignIn;
+
+    [SerializeField] private SignInUi uiSignUp;
+
+    [SerializeField] private ChatRoom chatRoom;
     private void Awake()
     {
         spawnManager = GetComponent<SpawnManager>();
@@ -76,6 +80,45 @@ public class Client : MonoBehaviour
             Debug.LogError($"failed: {response.StatusCode}");
         }
     }
+
+
+    public async Task PostData(string userName, string password)
+    {
+        string url = "https://localhost:7087/api/category";
+
+        Category newCategory = new Category
+        {
+            Id = "",
+            UserName = userName,
+            Password = password
+        };
+
+        Category x = categories.Find(x => x.UserName == userName);
+        if (x != null)
+        {
+            Debug.Log("UserName exist");
+            return;
+        }
+
+        string json = JsonConvert.SerializeObject(newCategory);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+        HttpResponseMessage response = await _httpClient.PostAsync(url, content);
+
+
+        if (response.IsSuccessStatusCode)
+        {
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Debug.Log($"Success: {responseBody}");
+            categories.Add(newCategory);
+        }
+        else
+        {
+            Debug.LogError($"Failed: {response.StatusCode}");
+        }
+
+    }
+
     #endregion
 
 
@@ -94,9 +137,10 @@ public class Client : MonoBehaviour
 
         if (exists)
         {
-            ui.Hide();
+            uiSignIn.Hide();
             await InitSocket();
             Task taskWaitConnect = WaitConnect();
+            uiSignIn.ShowBtnChatRoom();
             return;
         }
         Debug.LogError("Invalid User or Password");
@@ -106,7 +150,7 @@ public class Client : MonoBehaviour
     {
         clientSockets = new Socket(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
         await clientSockets.ConnectAsync(ipEndPoint);
-        //isConnected = true;
+        isConnected = true;
 
         string result = JsonConvert.SerializeObject(new MyVector3());
         SendMessageToServer(result);
@@ -129,8 +173,13 @@ public class Client : MonoBehaviour
 
     private async Task HandleOneMessage(string message)
     {
-        Debug.Log(message);
+        //Debug.Log(message);
         if (Equals(message, '@')) return;
+        if (message[0] != '{')
+        {
+            chatRoom.UpdateTextBoard(message);
+            Debug.Log(message);
+        }
         MyVector3 dataNewPlayer = JsonConvert.DeserializeObject<MyVector3>(message);
 
         if (dataNewPlayer != null)
@@ -140,7 +189,7 @@ public class Client : MonoBehaviour
                 Player newPlayer = CreatePlayer(dataNewPlayer);
                 return;
             }
-            else if(dataNewPlayer.type == RequestType.POSITION)
+            else if (dataNewPlayer.type == RequestType.POSITION)
             {
                 int _id = dataNewPlayer.id;
                 Player player = listOfPlayer.Find(x => x.Id == _id);
@@ -162,7 +211,7 @@ public class Client : MonoBehaviour
         }
     }
 
-    private void SendMessageToServer(string message)
+    public void SendMessageToServer(string message)
     {
         var sendBuffer = Encoding.UTF8.GetBytes(message + '@');
         clientSockets.Send(sendBuffer);
@@ -173,10 +222,15 @@ public class Client : MonoBehaviour
         if (!canMove) return;
         myPlayer.moveHorizontal = Input.GetAxis("Horizontal");
         myPlayer.moveVertical = Input.GetAxis("Vertical");
-
-        string result = ConvertToMyVector3(myPlayer, RequestType.POSITION);
-        SendMessageToServer(result);
-
+    }
+    private void FixedUpdate()
+    {
+        if (!canMove) return;
+        if (myPlayer.moveHorizontal != 0 || myPlayer.moveVertical != 0)
+        {
+            string result = ConvertToMyVector3(myPlayer, RequestType.POSITION);
+            SendMessageToServer(result);
+        }
     }
 
     private string ConvertToMyVector3(Player player, RequestType type)

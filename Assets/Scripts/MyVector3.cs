@@ -1,3 +1,5 @@
+using SouthPointe.Serialization.MessagePack;
+
 public class MyVector3
 {
     public RequestType type;
