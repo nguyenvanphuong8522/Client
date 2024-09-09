@@ -15,7 +15,7 @@ public class Client : MonoBehaviour
 {
 
     #region Init
-    static IPEndPoint ipEndPoint = new(IPAddress.Loopback, 8522);
+    static IPEndPoint ipEndPoint = new(IPAddress.Parse("192.168.1.25"), 8522);
 
     private Socket clientSockets;
 
@@ -27,7 +27,7 @@ public class Client : MonoBehaviour
 
     private bool canMove;
 
-    private bool isConnected;
+    //private bool isConnected;
 
     private string userName;
 
@@ -106,7 +106,7 @@ public class Client : MonoBehaviour
     {
         clientSockets = new Socket(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
         await clientSockets.ConnectAsync(ipEndPoint);
-        isConnected = true;
+        //isConnected = true;
 
         string result = JsonConvert.SerializeObject(new MyVector3());
         SendMessageToServer(result);
@@ -129,6 +129,7 @@ public class Client : MonoBehaviour
 
     private async Task HandleOneMessage(string message)
     {
+        Debug.Log(message);
         if (Equals(message, '@')) return;
         MyVector3 dataNewPlayer = JsonConvert.DeserializeObject<MyVector3>(message);
 
@@ -148,7 +149,6 @@ public class Client : MonoBehaviour
                     await UniTask.SwitchToMainThread();
                     player.transform.position = new Vector3(dataNewPlayer.x, dataNewPlayer.y, dataNewPlayer.z);
                     await UniTask.SwitchToThreadPool();
-
                 }
             }
         }

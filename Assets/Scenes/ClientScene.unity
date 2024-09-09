@@ -1778,6 +1778,7 @@ MonoBehaviour:
   client: {fileID: 782628377}
   inputFieldUserName: {fileID: 1548312960}
   inputFieldPassword: {fileID: 97394257}
+  _password: 
   btnSignIn: {fileID: 978041430}
 --- !u!114 &1975454210
 MonoBehaviour:

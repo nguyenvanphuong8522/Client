@@ -107,43 +107,43 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1580}
+      Script: {instanceID: 1606}
     - Class: 114
-      Script: {instanceID: 1710}
+      Script: {instanceID: 1736}
     - Class: 114
-      Script: {instanceID: 2184}
+      Script: {instanceID: 2210}
     - Class: 114
-      Script: {instanceID: 2618}
+      Script: {instanceID: 2644}
     - Class: 114
-      Script: {instanceID: 2828}
+      Script: {instanceID: 2854}
     - Class: 114
-      Script: {instanceID: 3142}
+      Script: {instanceID: 3168}
     - Class: 114
-      Script: {instanceID: 3644}
+      Script: {instanceID: 3670}
     - Class: 114
-      Script: {instanceID: 4158}
+      Script: {instanceID: 4184}
     - Class: 114
-      Script: {instanceID: 4172}
+      Script: {instanceID: 4198}
     - Class: 114
-      Script: {instanceID: 4444}
+      Script: {instanceID: 4470}
     - Class: 114
-      Script: {instanceID: 4970}
+      Script: {instanceID: 4748}
     - Class: 114
-      Script: {instanceID: 5152}
+      Script: {instanceID: 5000}
     - Class: 114
-      Script: {instanceID: 5412}
+      Script: {instanceID: 5182}
     - Class: 114
-      Script: {instanceID: 5726}
+      Script: {instanceID: 5442}
     - Class: 114
-      Script: {instanceID: 5882}
+      Script: {instanceID: 5756}
     - Class: 114
-      Script: {instanceID: 6210}
+      Script: {instanceID: 5912}
     - Class: 114
-      Script: {instanceID: 7006}
+      Script: {instanceID: 6240}
     - Class: 114
-      Script: {instanceID: 7066}
+      Script: {instanceID: 7036}
     - Class: 114
-      Script: {instanceID: 32266}
+      Script: {instanceID: 7096}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -583,6 +583,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerClickMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 97b3278f9226356ffa7d573282b1fa81
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SignInUi
   - hash:
       serializedVersion: 2
       Hash: 0b63f6d3335e11939ce8790b904c8691
@@ -1027,13 +1033,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: a882aa1619ea40e332b1bb40792bf96f
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SignInUi
   platform: 19
   scenePathNames:
   - Assets/Scenes/ClientScene.unity
-  playerPath: C:/Users/Phuong/Projects/MultiplayerDemo/Build/MultiplayerDemo.exe
+  playerPath: C:/Users/Phuong/Projects/MultiplayerDemo/BuildClient/MultiplayerDemo.exe
