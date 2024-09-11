@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9028406738457623761}
   - component: {fileID: 8002116489687081978}
   - component: {fileID: 8652126298733077095}
+  - component: {fileID: 6187069404594717096}
   m_Layer: 0
   m_Name: Client
   m_TagString: Untagged
@@ -45,7 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8e5b89341efd4e468b0a39e50b9b8c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabPlayer: {fileID: 6708461640332837511, guid: bafc961012251d04994d3288a329a416, type: 3}
+  isConnected: 0
+  uiSignIn: {fileID: 0}
+  uiSignUp: {fileID: 0}
+  chatRoom: {fileID: 0}
 --- !u!114 &8652126298733077095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,3 +64,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   listOfPrefab:
   - {fileID: 6708461640332837511, guid: bafc961012251d04994d3288a329a416, type: 3}
+--- !u!114 &6187069404594717096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664954350135496074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c9f98bdc429f94ea94c7425df7c41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
