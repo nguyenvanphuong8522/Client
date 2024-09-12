@@ -9,12 +9,23 @@ public class Player : MonoBehaviour
     public int Id { get; set; }
 
     public float moveSpeed = 5f;
-    public float moveHorizontal;
-    public float moveVertical;
 
+    public float horizontalInput;
 
+    public float verticalInput;
+
+    
     void FixedUpdate()
     {
-        transform.Translate(new Vector3(moveHorizontal * moveSpeed * Time.fixedDeltaTime, 0, moveVertical * moveSpeed * Time.fixedDeltaTime));
+        float x = horizontalInput * moveSpeed * Time.fixedDeltaTime;
+
+        float y = verticalInput * moveSpeed * Time.fixedDeltaTime;
+
+        transform.Translate(new Vector3(x, 0, y));
+    }
+
+    public void UpdatePosition(Vector3 newPos)
+    {
+        transform.position = newPos;
     }
 }

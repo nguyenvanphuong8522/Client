@@ -9,8 +9,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Linq;
-using System.Net.Http;
-
+using MyLibrary;
 public class Client : MonoBehaviour
 {
     static IPEndPoint ipEndPoint;
@@ -21,9 +20,9 @@ public class Client : MonoBehaviour
 
     private List<Player> listOfPlayer;
 
-    private Player myPlayer;
+    public Player myPlayer;
 
-    private bool canPlay;
+    public bool canPlay;
 
     [SerializeField] private PanelChat chatRoom;
 
@@ -56,8 +55,11 @@ public class Client : MonoBehaviour
         clientSockets = new Socket(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
         await clientSockets.ConnectAsync(ipEndPoint);
 
-        string result = JsonConvert.SerializeObject(new MyVector3());
-        SendMessageToServer(result);
+        string result = JsonConvert.SerializeObject(new PlayerPosition());
+        MyDataRequest newDataRequest = new MyDataRequest();
+        newDataRequest.MyRequestType = MyMessageType.CREATE;
+        newDataRequest.Content = result;
+        SendMessageToServer(JsonConvert.SerializeObject(newDataRequest));
     }
 
     private async Task WaitReceiveRequest()
@@ -72,42 +74,40 @@ public class Client : MonoBehaviour
             HandleManyMessage(messageReceived);
         }
     }
-    private string[] StringSplitArray(string message) => message.Split('@').Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
-
     private async Task HandleOneMessage(string message)
     {
         if (Equals(message, '@')) return;
-        if (message[0] != '{')
-        {
-            chatRoom.UpdateContentChatBox(message);
-            Debug.Log(message);
-        }
-        MyVector3 dataNewPlayer = JsonConvert.DeserializeObject<MyVector3>(message);
+        MyDataRequest dataRequest = JsonConvert.DeserializeObject<MyDataRequest>(message);
 
-        if (dataNewPlayer != null)
+
+        switch (dataRequest.MyRequestType)
         {
-            if (dataNewPlayer.type == RequestType.CREATE)
-            {
+            case MyMessageType.CREATE:
+                PlayerPosition dataNewPlayer = JsonConvert.DeserializeObject<PlayerPosition>(dataRequest.Content);
                 Player newPlayer = CreatePlayer(dataNewPlayer);
-                return;
-            }
-            else if (dataNewPlayer.type == RequestType.POSITION)
-            {
-                int _id = dataNewPlayer.id;
+                break;
+            case MyMessageType.POSITION:
+                PlayerPosition dataNewPlayer2 = JsonConvert.DeserializeObject<PlayerPosition>(dataRequest.Content);
+                int _id = dataNewPlayer2.id;
                 Player player = listOfPlayer.Find(x => x.Id == _id);
                 if (player != null && player.Id != myPlayer.Id)
                 {
                     await UniTask.SwitchToMainThread();
-                    player.transform.position = new Vector3(dataNewPlayer.x, dataNewPlayer.y, dataNewPlayer.z);
+                    player.UpdatePosition(new Vector3(dataNewPlayer2.Vector3.x, dataNewPlayer2.Vector3.y, dataNewPlayer2.Vector3.z));
                     await UniTask.SwitchToThreadPool();
                 }
-            }
+                break;
+            case MyMessageType.TEXT:
+                chatRoom.UpdateContentChatBox(dataRequest.Content);
+                break;
+            default:
+                break;
         }
     }
 
     private void HandleManyMessage(string messages)
     {
-        foreach (string message in StringSplitArray(messages))
+        foreach (string message in MyUtility.StringSplitArray(messages))
         {
             var t = HandleOneMessage(message);
         }
@@ -122,32 +122,36 @@ public class Client : MonoBehaviour
     private void Update()
     {
         if (!canPlay) return;
-        myPlayer.moveHorizontal = Input.GetAxis("Horizontal");
-        myPlayer.moveVertical = Input.GetAxis("Vertical");
+        myPlayer.horizontalInput = Input.GetAxis("Horizontal");
+        myPlayer.verticalInput = Input.GetAxis("Vertical");
     }
     private void FixedUpdate()
     {
         if (!canPlay) return;
-        if (myPlayer.moveHorizontal != 0 || myPlayer.moveVertical != 0)
+        if (myPlayer.horizontalInput != 0 || myPlayer.verticalInput != 0)
         {
-            string result = ConvertToMyVector3(myPlayer, RequestType.POSITION);
+            string result = ConvertToMyVector3(myPlayer, MyMessageType.POSITION);
             SendMessageToServer(result);
         }
     }
 
-    private string ConvertToMyVector3(Player player, RequestType type)
+    public string ConvertToMyVector3(Player player, MyMessageType type)
     {
         Vector3 curPos = player.transform.position;
-        MyVector3 newVector3 = new MyVector3(curPos.x, curPos.y, curPos.z, type);
+        PlayerPosition newVector3 = new PlayerPosition(player.Id, ConvertToMyvector3(curPos));
         newVector3.id = player.Id;
-        return JsonConvert.SerializeObject(newVector3);
+        MyDataRequest newDataRequest = new MyDataRequest();
+        newDataRequest.MyRequestType = type;
+        newDataRequest.Content = JsonConvert.SerializeObject(newVector3);
+        return JsonConvert.SerializeObject(newDataRequest);
     }
 
-    private Player CreatePlayer(MyVector3 data)
+
+    private Player CreatePlayer(PlayerPosition data)
     {
         if (!HasPlayer(data.id))
         {
-            Vector3 newPos = new Vector3(data.x, data.y, data.z);
+            Vector3 newPos = new Vector3(data.Vector3.x, data.Vector3.y, data.Vector3.z);
             Player newPlayer = spawnManager.GetPrefab(0, newPos);
             newPlayer.Id = data.id;
 
@@ -172,17 +176,24 @@ public class Client : MonoBehaviour
     private string ConvertToJson(Player player)
     {
         Vector3 curPos = player.transform.position;
-        MyVector3 newVector3 = new MyVector3(curPos.x, curPos.y, curPos.z, RequestType.POSITION);
-        newVector3.id = player.Id;
-        string result = JsonConvert.SerializeObject(newVector3);
+        PlayerPosition newPlayerposition = new PlayerPosition(player.Id, ConvertToMyvector3(curPos));
+        string result = JsonConvert.SerializeObject(newPlayerposition);
         return result;
+    }
+
+    public MyVector3 ConvertToMyvector3(Vector3 oldVector)
+    {
+        MyVector3 myVector3 = new MyVector3(oldVector.x, oldVector.y, oldVector.z);
+        return myVector3;
     }
 
     private void OnDestroy()
     {
-        MyVector3 newVector3 = new MyVector3(0, 0, 0, RequestType.DESTROY);
-        newVector3.id = myPlayer.Id;
-        SendMessageToServer(JsonConvert.SerializeObject(newVector3));
+        PlayerPosition newPlayerPosition = new PlayerPosition();
+        newPlayerPosition.id = myPlayer.Id;
+        MyDataRequest dataRequest = new MyDataRequest();
+        dataRequest.Content = JsonConvert.SerializeObject(newPlayerPosition);
+        SendMessageToServer(JsonConvert.SerializeObject(dataRequest));
         clientSockets.Shutdown(SocketShutdown.Both);
     }
 }

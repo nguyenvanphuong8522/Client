@@ -1,3 +1,5 @@
+using MyLibrary;
+using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -27,7 +29,10 @@ public class PanelChat : MonoBehaviour, IPanel
     private void OnSendMessage()
     {
         string message = inputField.text;
-        client.SendMessageToServer(message);
+        MyDataRequest dataRequest = new MyDataRequest();
+        dataRequest.Content = message;
+        dataRequest.MyRequestType = MyMessageType.TEXT;
+        client.SendMessageToServer(JsonConvert.SerializeObject(dataRequest));
     }
 
     public void Show()
