@@ -47,7 +47,6 @@ public class ApiClient : MonoBehaviour
             string responseBody = await response.Content.ReadAsStringAsync();
             Debug.Log($"Success: {responseBody}");
             return true;
-
         }
         Debug.LogError($"Failed: {response.StatusCode}");
         return false;

@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Demo\DemoUnitask.cs" />
     <Compile Include="Assets\Scripts\UI\PanelSignIn.cs" />
     <Compile Include="Assets\Scripts\Manager\SpawnManager.cs" />
+    <Compile Include="Assets\Scripts\Utility\ClientUtility.cs" />
     <Compile Include="Assets\Scripts\UI\UiController.cs" />
     <Compile Include="Assets\Scripts\ApiService\ApiClient.cs" />
     <Compile Include="Assets\Scripts\UI\Menu\Menu.cs" />

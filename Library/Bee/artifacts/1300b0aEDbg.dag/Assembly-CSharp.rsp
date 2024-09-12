@@ -384,6 +384,7 @@
 "Assets/Scripts/UI/PanelSignIn.cs"
 "Assets/Scripts/UI/PanelSignUp.cs"
 "Assets/Scripts/UI/UiController.cs"
+"Assets/Scripts/Utility/ClientUtility.cs"
 -langversion:9.0
 /deterministic
 /optimize-

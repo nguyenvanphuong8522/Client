@@ -30,10 +30,14 @@ public class PanelChat : MonoBehaviour, IPanel
     {
         string message = inputField.text;
         MyDataRequest dataRequest = new MyDataRequest();
-        dataRequest.Content = message;
-        dataRequest.MyRequestType = MyMessageType.TEXT;
-        client.SendMessageToServer(JsonConvert.SerializeObject(dataRequest));
+        MessageText messageText = new MessageText(client.myPlayer.Id, message);
+
+        dataRequest.Content = JsonConvert.SerializeObject(messageText);
+        dataRequest.Type = MyMessageType.TEXT;
+        string messageFinally = JsonConvert.SerializeObject(dataRequest);
+        client.SendMessageToServer(messageFinally);
     }
+
 
     public void Show()
     {

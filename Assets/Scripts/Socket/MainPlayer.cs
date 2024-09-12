@@ -22,7 +22,7 @@ public class MainPlayer : MonoBehaviour
         if (!client.canPlay) return;
         if (client.myPlayer.horizontalInput != 0 || client.myPlayer.verticalInput != 0)
         {
-            string result = client.ConvertToMyVector3(client.myPlayer, MyMessageType.POSITION);
+            string result = client.ConvertToMessagePosition(client.myPlayer, MyMessageType.POSITION);
             client.SendMessageToServer(result);
         }
     }
