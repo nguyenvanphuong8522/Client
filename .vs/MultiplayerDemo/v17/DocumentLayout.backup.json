@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|c:\\users\\phuong\\projects\\multiplayerdemo\\assets\\scripts\\socket\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\socket\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,8 +11,16 @@
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\apiservice\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\apiservice\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\ui\\panelsignin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelsignin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\manager\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,10 +39,6 @@
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\apiservice\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\apiservice\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\ui\\ipanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\ipanel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -50,17 +50,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Client.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\Client.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Socket\\Client.cs",
               "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\Client.cs",
               "RelativeToolTip": "Assets\\Scripts\\Socket\\Client.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAIwE8AAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAtwKsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T02:17:45.527Z",
               "IsPinned": true,
@@ -69,6 +69,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Models\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Models\\Player.cs",
+              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Models\\Player.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Models\\Player.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T03:07:36.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "SpawnManager.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Manager\\SpawnManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\SpawnManager.cs",
@@ -80,20 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Models\\Player.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Models\\Player.cs",
-              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Models\\Player.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Models\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T07:46:44.107Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Models\\Account.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Models\\Account.cs",
@@ -105,19 +105,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "PanelChat.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelChat.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PanelChat.cs",
               "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelChat.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\PanelChat.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACEAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T03:35:42.951Z"
+              "WhenOpened": "2024-09-11T03:35:42.951Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "PanelSignUp.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelSignUp.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PanelSignUp.cs",
@@ -129,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "PanelInGame.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelInGame.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PanelInGame.cs",
@@ -159,21 +160,23 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PanelSignIn.cs",
               "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelSignIn.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\PanelSignIn.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCIAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T02:27:04.55Z"
+              "WhenOpened": "2024-09-11T02:27:04.55Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "ApiClient.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\ApiService\\ApiClient.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ApiService\\ApiClient.cs",
               "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\ApiService\\ApiClient.cs",
               "RelativeToolTip": "Assets\\Scripts\\ApiService\\ApiClient.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACIAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAswDEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T02:24:34.187Z"
+              "WhenOpened": "2024-09-11T02:24:34.187Z",
+              "EditorCaption": ""
             }
           ]
         }
