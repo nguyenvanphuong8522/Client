@@ -48,6 +48,11 @@ public class MessageHandler : MonoBehaviour
                 chatRoom.UpdateContentChatBox(messageText.text);
                 break;
             case MyMessageType.DESTROY:
+                MessageBase messageDestroy = JsonConvert.DeserializeObject<MessageBase>(data.Content);
+                Debug.Log($"Client[{messageDestroy.id}] disconnected!");
+                await UniTask.SwitchToMainThread();
+                playerManager.RemovePlayer(messageDestroy.id);
+                await UniTask.SwitchToThreadPool();
                 break;
             default:
                 break;

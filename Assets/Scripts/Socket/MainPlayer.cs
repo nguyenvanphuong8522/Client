@@ -26,7 +26,7 @@ public class MainPlayer : MonoBehaviour
             Vector3 newPos = client.playerManager.myPlayer.transform.position;
             string content = MyUtility.ConvertToMessagePosition(client.playerManager.myPlayer.Id, new MyVector3(newPos.x, newPos.y, newPos.z));
             string result = MyUtility.ConvertToDataRequestJson(content, MyMessageType.POSITION);
-            client.socketManager.SendMessageToServer(result);
+            var t = client.socketManager.SendMessageToServer(result);
         }
     }
 }

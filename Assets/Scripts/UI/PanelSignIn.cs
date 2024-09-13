@@ -30,7 +30,7 @@ public class PanelSignIn : MonoBehaviour, IPanel
     {
         string _userName = inputFieldPanel.UserName;
         string _password = inputFieldPanel.Password;
-        Debug.Log($"Username: {_userName} - Password: {_password}");
+        //Debug.Log($"Username: {_userName} - Password: {_password}");
         apiClient.SetNamePassword(_userName, _password);
         client.Connect();
         Hide();

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using MyLibrary;
 using UnityEngine;
-using UnityEditor.Experimental.GraphView;
 
 public class SocketManager :MonoBehaviour
 {
@@ -14,14 +13,10 @@ public class SocketManager :MonoBehaviour
     private IPEndPoint ipEndPoint;
     public MessageHandler messageHandler;
 
-    private void Awake()
+    public async Task InitSocket()
     {
         ipEndPoint = new IPEndPoint(IPAddress.Parse("192.168.1.25"), 8522);
         socket = new Socket(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-    }
-
-    public async Task InitSocket()
-    {
         await socket.ConnectAsync(ipEndPoint);
         string content = JsonConvert.SerializeObject(new MessagePosition());
         SendMessageToServer(MyUtility.ConvertToDataRequestJson(content, MyMessageType.CREATE));
@@ -40,10 +35,10 @@ public class SocketManager :MonoBehaviour
         }
     }
 
-    public void SendMessageToServer(string message)
+    public async Task SendMessageToServer(string message)
     {
         byte[] sendBuffer = Encoding.UTF8.GetBytes($"{message}@");
-        socket.Send(sendBuffer);
+        await socket.SendAsync(sendBuffer, SocketFlags.None);
     }
     public void SendMessageToServer(byte[] bytes)
     {

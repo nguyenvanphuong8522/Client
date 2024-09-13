@@ -5,13 +5,10 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> listOfPrefab;
-
-    public Player GetPrefab(int index, Vector3 newPos)
+    public Player GetPrefab(Vector3 newPos, int index = 0)
     {
-
-        GameObject newGO = Instantiate(listOfPrefab[index], newPos, Quaternion.identity);
+        GameObject newGO = Instantiate(listOfPrefab[0], newPos, Quaternion.identity);
         Player newPlayer = newGO.GetComponent<Player>();
-        newPlayer.Id = Random.Range(-100, 100);
         return newPlayer;
     }
 }

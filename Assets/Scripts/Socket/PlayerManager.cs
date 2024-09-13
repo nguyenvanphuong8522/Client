@@ -23,8 +23,9 @@ public class PlayerManager : MonoBehaviour
         if (!HasPlayer(data.id))
         {
             Vector3 newPos = new Vector3(data.Position.x, data.Position.y, data.Position.z);
-            Player newPlayer = spawnManager.GetPrefab(0, newPos);
+            Player newPlayer = spawnManager.GetPrefab(newPos);
             newPlayer.Id = data.id;
+            newPlayer.gameObject.name = $"Player{data.id}";
 
             if (myPlayer == null)
             {
@@ -43,6 +44,23 @@ public class PlayerManager : MonoBehaviour
         return listOfPlayer.Exists(x => x.Id == id);
     }
 
+    public Player GetPlayer(int id)
+    {
+        return listOfPlayer.Find(x => x.Id == id);
+    }
+
+
+    public void RemovePlayer(int id)
+    {
+        Player player = GetPlayer(id);
+        DestroyPlayer(player);
+        listOfPlayer.Remove(player);
+    }
+
+    public void DestroyPlayer(Player player)
+    {
+        Destroy(player.gameObject);
+    }
     public void NotifyPlayerDestroyed(Client socketManager, Player myPlayer)
     {
         MessagePosition newMessagePosition = new MessagePosition { id = myPlayer.Id };

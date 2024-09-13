@@ -41,15 +41,14 @@ public class Client : MonoBehaviour
         Debug.LogError("Invalid User or Password");
     }
 
-    public void Disconnect()
+    public async Task Disconnect()
     {
         string content = MyUtility.ConvertToMessagePosition(playerManager.myPlayer.Id, new MyVector3());
-        socketManager.SendMessageToServer(MyUtility.ConvertToDataRequestJson(content, MyMessageType.DESTROY));
-        socketManager.CloseConnection();
+        await socketManager.SendMessageToServer(MyUtility.ConvertToDataRequestJson(content, MyMessageType.DESTROY));
     }
-    private void OnDestroy()
+    private async void OnDestroy()
     {
-        Disconnect();
+        await Disconnect();
     }
 }
 
