@@ -1,5 +1,4 @@
 ﻿using Cysharp.Threading.Tasks;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net.Sockets;
@@ -14,8 +13,6 @@ public class Client : MonoBehaviour
 {
     static IPEndPoint ipEndPoint;
 
-    private Socket clientSockets;
-
     public PlayerManager playerManager;
 
     public bool canPlay;
@@ -23,6 +20,11 @@ public class Client : MonoBehaviour
     [SerializeField] private PanelChat chatRoom;
 
     private ApiClient apiClient;
+
+    public MessageHandler messageHandler;
+
+    public SocketManager socketManager;
+
 
     private void Awake()
     {
@@ -35,82 +37,12 @@ public class Client : MonoBehaviour
 
         if (exists)
         {
-            await InitSocket();
-            Task taskWaitConnect = WaitReceiveRequest();
+            await socketManager.InitSocket();
+            Task taskWaitConnect = socketManager.WaitReceiveRequest();
             UiController.instance.ShowPanelInGame();
             return;
         }
         Debug.LogError("Invalid User or Password");
-    }
-
-    private async Task InitSocket()
-    {
-        ipEndPoint = new(IPAddress.Parse("192.168.1.25"), 8522);
-        clientSockets = new Socket(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-        await clientSockets.ConnectAsync(ipEndPoint);
-
-        string content = JsonConvert.SerializeObject(new MessagePosition());
-        string result = MyUtility.ConvertToDataRequestJson(content, MyMessageType.CREATE);
-        SendMessageToServer(result);
-    }
-
-    private async Task WaitReceiveRequest()
-    {
-        while (true)
-        {
-            var buffer = new byte[1024];
-            int messageCode = await clientSockets.ReceiveAsync(buffer, SocketFlags.None);
-            string messageReceived = Encoding.UTF8.GetString(buffer, 0, messageCode);
-
-            if (messageCode == 0) return;
-            HandleManyMessage(messageReceived);
-        }
-    }
-    private async Task HandleOneMessage(string message)
-    {
-        if (Equals(message, '@')) return;
-        MyDataRequest data = JsonConvert.DeserializeObject<MyDataRequest>(message);
-
-
-        switch (data.Type)
-        {
-            case MyMessageType.CREATE:
-                MessagePosition dataNewPlayer = JsonConvert.DeserializeObject<MessagePosition>(data.Content);
-                Player newPlayer = playerManager.CreatePlayer(dataNewPlayer);
-                break;
-            case MyMessageType.POSITION:
-                MessagePosition newMessagePosition = JsonConvert.DeserializeObject<MessagePosition>(data.Content);
-                int _id = newMessagePosition.id;
-                Player player = playerManager.listOfPlayer.Find(x => x.Id == _id);
-                if (player != null && player.Id != playerManager.myPlayer.Id)
-                {
-                    await UniTask.SwitchToMainThread();
-                    player.UpdatePosition(new Vector3(newMessagePosition.Position.x, newMessagePosition.Position.y, newMessagePosition.Position.z));
-                    await UniTask.SwitchToThreadPool();
-                }
-                break;
-            case MyMessageType.TEXT:
-                MessageText messageText = JsonConvert.DeserializeObject<MessageText>(data.Content);
-
-                chatRoom.UpdateContentChatBox(messageText.text);
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void HandleManyMessage(string messages)
-    {
-        foreach (string message in MyUtility.StringSplitArray(messages))
-        {
-            var t = HandleOneMessage(message);
-        }
-    }
-
-    public void SendMessageToServer(string message)
-    {
-        var sendBuffer = Encoding.UTF8.GetBytes($"{message}@");
-        clientSockets.Send(sendBuffer);
     }
 
     public string ConvertToMessagePosition(Player player, MyMessageType type)
@@ -142,8 +74,8 @@ public class Client : MonoBehaviour
         MyDataRequest dataRequest = new MyDataRequest();
         dataRequest.Content = JsonConvert.SerializeObject(newMessagePosition);
         dataRequest.Type = MyMessageType.DESTROY;
-        SendMessageToServer(JsonConvert.SerializeObject(dataRequest));
-        clientSockets.Shutdown(SocketShutdown.Both);
+        socketManager.SendMessageToServer(JsonConvert.SerializeObject(dataRequest));
+        socketManager.CloseConnection();
     }
 }
 

@@ -4,16 +4,11 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using MyLibrary;
 
-public class MessageHandler
+public class MessageHandler : MonoBehaviour
 {
-    private PlayerManager playerManager;
-    private PanelChat chatRoom;
+    [SerializeField] private PlayerManager playerManager;
+    [SerializeField] private PanelChat chatRoom;
 
-    public MessageHandler(PlayerManager playerManager, PanelChat chatRoom)
-    {
-        this.playerManager = playerManager;
-        this.chatRoom = chatRoom;
-    }
 
     public void HandleManyMessage(string messages)
     {

@@ -35,7 +35,7 @@ public class PanelChat : MonoBehaviour, IPanel
         dataRequest.Content = JsonConvert.SerializeObject(messageText);
         dataRequest.Type = MyMessageType.TEXT;
         string messageFinally = JsonConvert.SerializeObject(dataRequest);
-        client.SendMessageToServer(messageFinally);
+        client.socketManager.SendMessageToServer(messageFinally);
     }
 
 

@@ -51,6 +51,6 @@ public class PlayerManager : MonoBehaviour
             Content = JsonConvert.SerializeObject(newMessagePosition),
             Type = MyMessageType.DESTROY
         };
-        client.SendMessageToServer(JsonConvert.SerializeObject(dataRequest));
+        client.socketManager.SendMessageToServer(JsonConvert.SerializeObject(dataRequest));
     }
 }

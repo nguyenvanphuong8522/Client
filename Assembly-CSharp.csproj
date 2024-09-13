@@ -61,9 +61,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Models\Account.cs" />
+    <Compile Include="Assets\Scripts\Socket\SocketManager.cs" />
     <Compile Include="Assets\Scripts\Socket\MainPlayer.cs" />
     <Compile Include="Assets\Scripts\UI\InputFieldPanel.cs" />
     <Compile Include="Assets\Scripts\UI\IPanel.cs" />
+    <Compile Include="Assets\Scripts\Socket\MessageHandler.cs" />
     <Compile Include="Assets\Scripts\Socket\Client.cs" />
     <Compile Include="Assets\Scripts\UI\PanelSignUp.cs" />
     <Compile Include="Assets\Scripts\UI\PanelChat.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Assets\Scripts\Manager\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\Utility\ClientUtility.cs" />
     <Compile Include="Assets\Scripts\UI\UiController.cs" />
+    <Compile Include="Assets\Scripts\Socket\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\ApiService\ApiClient.cs" />
     <Compile Include="Assets\Scripts\UI\Menu\Menu.cs" />
   </ItemGroup>
