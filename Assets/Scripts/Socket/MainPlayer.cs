@@ -1,3 +1,4 @@
+using MyLibrary;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,15 +15,17 @@ public class MainPlayer : MonoBehaviour
     private void Update()
     {
         if (!client.canPlay) return;
-        client.myPlayer.horizontalInput = Input.GetAxis("Horizontal");
-        client.myPlayer.verticalInput = Input.GetAxis("Vertical");
+        client.playerManager.myPlayer.horizontalInput = Input.GetAxis("Horizontal");
+        client.playerManager.myPlayer.verticalInput = Input.GetAxis("Vertical");
     }
     private void FixedUpdate()
     {
         if (!client.canPlay) return;
-        if (client.myPlayer.horizontalInput != 0 || client.myPlayer.verticalInput != 0)
+        if (client.playerManager.myPlayer.horizontalInput != 0 || client.playerManager.myPlayer.verticalInput != 0)
         {
-            string result = client.ConvertToMessagePosition(client.myPlayer, MyMessageType.POSITION);
+            Vector3 newPos = client.playerManager.myPlayer.transform.position;
+            string content = MyUtility.ConvertToMessagePosition(client.playerManager.myPlayer.Id, new MyVector3(newPos.x, newPos.y, newPos.z));
+            string result = MyUtility.ConvertToDataRequestJson(content, MyMessageType.POSITION);
             client.SendMessageToServer(result);
         }
     }

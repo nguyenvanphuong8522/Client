@@ -16,11 +16,7 @@ public class Client : MonoBehaviour
 
     private Socket clientSockets;
 
-    private SpawnManager spawnManager;
-
-    private List<Player> listOfPlayer;
-
-    public Player myPlayer;
+    public PlayerManager playerManager;
 
     public bool canPlay;
 
@@ -31,8 +27,6 @@ public class Client : MonoBehaviour
     private void Awake()
     {
         apiClient = GetComponent<ApiClient>();
-        listOfPlayer = new List<Player>();
-        spawnManager = GetComponent<SpawnManager>();
     }
 
     public async void Connect()
@@ -82,13 +76,13 @@ public class Client : MonoBehaviour
         {
             case MyMessageType.CREATE:
                 MessagePosition dataNewPlayer = JsonConvert.DeserializeObject<MessagePosition>(data.Content);
-                Player newPlayer = CreatePlayer(dataNewPlayer);
+                Player newPlayer = playerManager.CreatePlayer(dataNewPlayer);
                 break;
             case MyMessageType.POSITION:
                 MessagePosition newMessagePosition = JsonConvert.DeserializeObject<MessagePosition>(data.Content);
                 int _id = newMessagePosition.id;
-                Player player = listOfPlayer.Find(x => x.Id == _id);
-                if (player != null && player.Id != myPlayer.Id)
+                Player player = playerManager.listOfPlayer.Find(x => x.Id == _id);
+                if (player != null && player.Id != playerManager.myPlayer.Id)
                 {
                     await UniTask.SwitchToMainThread();
                     player.UpdatePosition(new Vector3(newMessagePosition.Position.x, newMessagePosition.Position.y, newMessagePosition.Position.z));
@@ -133,32 +127,6 @@ public class Client : MonoBehaviour
     }
 
 
-    private Player CreatePlayer(MessagePosition data)
-    {
-        if (!HasPlayer(data.id))
-        {
-            Vector3 newPos = new Vector3(data.Position.x, data.Position.y, data.Position.z);
-            Player newPlayer = spawnManager.GetPrefab(0, newPos);
-            newPlayer.Id = data.id;
-
-            if (myPlayer == null)
-            {
-                myPlayer = newPlayer;
-            }
-            listOfPlayer.Add(newPlayer);
-            Debug.LogWarning("Created New Player");
-            canPlay = true;
-            return newPlayer;
-        }
-        return null;
-    }
-
-    private bool HasPlayer(int id)
-    {
-        Player player = listOfPlayer.Find(x => x.Id == id);
-        return player != null;
-    }
-
     private string ConvertToJson(Player player)
     {
         Vector3 curPos = player.transform.position;
@@ -170,7 +138,7 @@ public class Client : MonoBehaviour
     private void OnDestroy()
     {
         MessagePosition newMessagePosition = new MessagePosition();
-        newMessagePosition.id = myPlayer.Id;
+        newMessagePosition.id = playerManager.myPlayer.Id;
         MyDataRequest dataRequest = new MyDataRequest();
         dataRequest.Content = JsonConvert.SerializeObject(newMessagePosition);
         dataRequest.Type = MyMessageType.DESTROY;
@@ -178,3 +146,4 @@ public class Client : MonoBehaviour
         clientSockets.Shutdown(SocketShutdown.Both);
     }
 }
+
