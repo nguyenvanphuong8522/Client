@@ -11,13 +11,9 @@ using System.Linq;
 using MyLibrary;
 public class Client : MonoBehaviour
 {
-    static IPEndPoint ipEndPoint;
-
     public PlayerManager playerManager;
 
     public bool canPlay;
-
-    [SerializeField] private PanelChat chatRoom;
 
     private ApiClient apiClient;
 
@@ -45,37 +41,15 @@ public class Client : MonoBehaviour
         Debug.LogError("Invalid User or Password");
     }
 
-    public string ConvertToMessagePosition(Player player, MyMessageType type)
+    public void Disconnect()
     {
-        Vector3 curPos = player.transform.position;
-        MessagePosition MessagePosition = new MessagePosition(player.Id, ClientUtility.ConvertToMyvector3(curPos));
-        MessagePosition.id = player.Id;
-
-        MyDataRequest newDataRequest = new MyDataRequest();
-        newDataRequest.Type = type;
-        newDataRequest.Content = JsonConvert.SerializeObject(MessagePosition);
-
-        return JsonConvert.SerializeObject(newDataRequest);
+        string content = MyUtility.ConvertToMessagePosition(playerManager.myPlayer.Id, new MyVector3());
+        socketManager.SendMessageToServer(MyUtility.ConvertToDataRequestJson(content, MyMessageType.DESTROY));
+        socketManager.CloseConnection();
     }
-
-
-    private string ConvertToJson(Player player)
-    {
-        Vector3 curPos = player.transform.position;
-        MessagePosition newMessagePosition = new MessagePosition(player.Id, ClientUtility.ConvertToMyvector3(curPos));
-        string result = JsonConvert.SerializeObject(newMessagePosition);
-        return result;
-    }
-
     private void OnDestroy()
     {
-        MessagePosition newMessagePosition = new MessagePosition();
-        newMessagePosition.id = playerManager.myPlayer.Id;
-        MyDataRequest dataRequest = new MyDataRequest();
-        dataRequest.Content = JsonConvert.SerializeObject(newMessagePosition);
-        dataRequest.Type = MyMessageType.DESTROY;
-        socketManager.SendMessageToServer(JsonConvert.SerializeObject(dataRequest));
-        socketManager.CloseConnection();
+        Disconnect();
     }
 }
 

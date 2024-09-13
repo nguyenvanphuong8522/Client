@@ -47,6 +47,11 @@ public class MessageHandler : MonoBehaviour
                 MessageText messageText = JsonConvert.DeserializeObject<MessageText>(data.Content);
                 chatRoom.UpdateContentChatBox(messageText.text);
                 break;
+            case MyMessageType.DESTROY:
+                break;
+            default:
+                break;
+
         }
     }
 }

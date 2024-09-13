@@ -10,20 +10,21 @@ using UnityEditor.Experimental.GraphView;
 
 public class SocketManager :MonoBehaviour
 {
-    public Socket clientSocket;
+    public Socket socket;
     private IPEndPoint ipEndPoint;
     public MessageHandler messageHandler;
 
     private void Awake()
     {
         ipEndPoint = new IPEndPoint(IPAddress.Parse("192.168.1.25"), 8522);
-        clientSocket = new Socket(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+        socket = new Socket(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
     }
 
     public async Task InitSocket()
     {
-        await clientSocket.ConnectAsync(ipEndPoint);
-        SendMessageToServer(MyUtility.ConvertToDataRequestJson(JsonConvert.SerializeObject(new MessagePosition()), MyMessageType.CREATE));
+        await socket.ConnectAsync(ipEndPoint);
+        string content = JsonConvert.SerializeObject(new MessagePosition());
+        SendMessageToServer(MyUtility.ConvertToDataRequestJson(content, MyMessageType.CREATE));
     }
 
     public async Task WaitReceiveRequest()
@@ -31,7 +32,7 @@ public class SocketManager :MonoBehaviour
         while (true)
         {
             var buffer = new byte[1024];
-            int messageCode = await clientSocket.ReceiveAsync(buffer, SocketFlags.None);
+            int messageCode = await socket.ReceiveAsync(buffer, SocketFlags.None);
             string messageReceived = Encoding.UTF8.GetString(buffer, 0, messageCode);
 
             if (messageCode == 0) return;
@@ -42,12 +43,15 @@ public class SocketManager :MonoBehaviour
     public void SendMessageToServer(string message)
     {
         byte[] sendBuffer = Encoding.UTF8.GetBytes($"{message}@");
-        clientSocket.Send(sendBuffer);
+        socket.Send(sendBuffer);
+    }
+    public void SendMessageToServer(byte[] bytes)
+    {
+        socket.Send(bytes);
     }
 
     public void CloseConnection()
     {
-        clientSocket.Shutdown(SocketShutdown.Both);
-        clientSocket.Close();
+        socket.Close();
     }
 }
