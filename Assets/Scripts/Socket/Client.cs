@@ -55,11 +55,9 @@ public class Client : MonoBehaviour
         clientSockets = new Socket(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
         await clientSockets.ConnectAsync(ipEndPoint);
 
-        string result = JsonConvert.SerializeObject(new MessagePosition());
-        MyDataRequest newDataRequest = new MyDataRequest();
-        newDataRequest.Type = MyMessageType.CREATE;
-        newDataRequest.Content = result;
-        SendMessageToServer(JsonConvert.SerializeObject(newDataRequest));
+        string content = JsonConvert.SerializeObject(new MessagePosition());
+        string result = MyUtility.ConvertToDataRequestJson(content, MyMessageType.CREATE);
+        SendMessageToServer(result);
     }
 
     private async Task WaitReceiveRequest()
