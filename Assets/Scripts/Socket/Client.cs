@@ -53,7 +53,7 @@ public class Client : MonoBehaviour
     public async Task Disconnect()
     {
         byte[] content = MessagePackSerializer.Serialize(new MessageBase(playerManager.myPlayer.Id));
-        byte[] result = messageHandler.SendMessageConverted(MyMessageType.DESTROY, content);
+        byte[] result = MyUtility.SendMessageConverted(MyMessageType.DESTROY, content);
         socketManager.SendMessageToServer(result);
     }
     private async void OnDestroy()

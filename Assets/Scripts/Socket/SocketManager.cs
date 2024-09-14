@@ -38,7 +38,7 @@ public class SocketManager :MonoBehaviour
     {
         byte[] data = MessagePackSerializer.Serialize(new MessagePosition(1, new MyVector3()));
         Debug.Log(data.Length);
-        byte[] mainData = messageHandler.SendMessageConverted(MyMessageType.CREATE, data);
+        byte[] mainData = MyUtility.SendMessageConverted(MyMessageType.CREATE, data);
         
         SendMessageToServer(mainData);
     }
