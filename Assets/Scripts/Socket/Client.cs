@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Linq;
 using MyLibrary;
+using MessagePack;
 public class Client : MonoBehaviour
 {
     public PlayerManager playerManager;
@@ -27,6 +28,14 @@ public class Client : MonoBehaviour
         apiClient = GetComponent<ApiClient>();
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            Disconnect();
+        }
+    }
+
     public async void Connect()
     {
         bool exists = await apiClient.Login();
@@ -43,8 +52,9 @@ public class Client : MonoBehaviour
 
     public async Task Disconnect()
     {
-        string content = MyUtility.ConvertToMessagePosition(playerManager.myPlayer.Id, new MyVector3());
-        await socketManager.SendMessageToServer(MyUtility.ConvertToDataRequestJson(content, MyMessageType.DESTROY));
+        byte[] content = MessagePackSerializer.Serialize(new MessageBase(playerManager.myPlayer.Id));
+        byte[] result = messageHandler.SendMessageConverted(MyMessageType.DESTROY, content);
+        socketManager.SendMessageToServer(result);
     }
     private async void OnDestroy()
     {

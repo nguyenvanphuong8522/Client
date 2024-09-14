@@ -119,6 +119,15 @@
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -define:UNITY_EDITOR_ONLY_COMPILATION
+-r:"Assets/NuGet/Editor/NugetForUnity.dll"
+-r:"Assets/NuGet/Editor/NuGetForUnity.PluginAPI.dll"
+-r:"Assets/Packages/MessagePack.2.5.172/lib/netstandard2.0/MessagePack.dll"
+-r:"Assets/Packages/MessagePack.Annotations.2.5.172/lib/netstandard2.0/MessagePack.Annotations.dll"
+-r:"Assets/Packages/Microsoft.Bcl.AsyncInterfaces.6.0.0/lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll"
+-r:"Assets/Packages/Microsoft.NET.StringTools.17.6.3/lib/netstandard2.0/Microsoft.NET.StringTools.dll"
+-r:"Assets/Packages/System.Collections.Immutable.6.0.0/lib/netstandard2.0/System.Collections.Immutable.dll"
+-r:"Assets/Packages/System.Runtime.CompilerServices.Unsafe.6.0.0/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll"
+-r:"Assets/Plugins/Library/MyLibrary.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.30f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"

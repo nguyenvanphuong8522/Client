@@ -2,6 +2,7 @@ using MyLibrary;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MessagePack;
 
 public class MainPlayer : MonoBehaviour
 {
@@ -24,9 +25,10 @@ public class MainPlayer : MonoBehaviour
         if (client.playerManager.myPlayer.horizontalInput != 0 || client.playerManager.myPlayer.verticalInput != 0)
         {
             Vector3 newPos = client.playerManager.myPlayer.transform.position;
-            string content = MyUtility.ConvertToMessagePosition(client.playerManager.myPlayer.Id, new MyVector3(newPos.x, newPos.y, newPos.z));
-            string result = MyUtility.ConvertToDataRequestJson(content, MyMessageType.POSITION);
-            var t = client.socketManager.SendMessageToServer(result);
+            MessagePosition messagePosition = new MessagePosition(client.playerManager.myPlayer.Id, new MyVector3(newPos.x, newPos.y, newPos.z));
+            byte[] data = MessagePackSerializer.Serialize(messagePosition);
+            byte[] result = client.messageHandler.SendMessageConverted(MyMessageType.POSITION, data);
+            client.socketManager.SendMessageToServer(result);
         }
     }
 }

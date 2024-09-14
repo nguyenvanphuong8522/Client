@@ -1,12 +1,23 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - ChatRoom
+    - ApiClient
     - Client
+    - InputFieldPanel
+    - MainPlayer
+    - Menu
+    - MessageHandler
+    - PanelChat
+    - PanelInGame
+    - PanelSignIn
+    - PanelSignUp
     - Player
-    - SignInUi
-    - SignUpUi
+    - PlayerManager
+    - SocketManager
     - SpawnManager
+    - UiController
+    ParrelSync.dll:
+    - ParrelSync.ClonesManagerWindow
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -80,18 +91,6 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.GameObject
-    methodName: SetActive
   sceneClasses:
     Assets/Scenes/ClientScene.unity:
     - Class: 1
@@ -127,47 +126,65 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1608}
+      Script: {instanceID: 16648}
     - Class: 114
-      Script: {instanceID: 1746}
+      Script: {instanceID: 16650}
     - Class: 114
-      Script: {instanceID: 2224}
+      Script: {instanceID: 16740}
     - Class: 114
-      Script: {instanceID: 2666}
+      Script: {instanceID: 16872}
     - Class: 114
-      Script: {instanceID: 2880}
+      Script: {instanceID: 16920}
     - Class: 114
-      Script: {instanceID: 3198}
+      Script: {instanceID: 17350}
     - Class: 114
-      Script: {instanceID: 3710}
+      Script: {instanceID: 17786}
     - Class: 114
-      Script: {instanceID: 4244}
+      Script: {instanceID: 18002}
     - Class: 114
-      Script: {instanceID: 4260}
+      Script: {instanceID: 18316}
     - Class: 114
-      Script: {instanceID: 4536}
+      Script: {instanceID: 18800}
     - Class: 114
-      Script: {instanceID: 4822}
+      Script: {instanceID: 18822}
     - Class: 114
-      Script: {instanceID: 5086}
+      Script: {instanceID: 18952}
     - Class: 114
-      Script: {instanceID: 5272}
+      Script: {instanceID: 19344}
     - Class: 114
-      Script: {instanceID: 5542}
+      Script: {instanceID: 19358}
     - Class: 114
-      Script: {instanceID: 5858}
+      Script: {instanceID: 19396}
     - Class: 114
-      Script: {instanceID: 6020}
+      Script: {instanceID: 19634}
     - Class: 114
-      Script: {instanceID: 6352}
+      Script: {instanceID: 19796}
     - Class: 114
-      Script: {instanceID: 7156}
+      Script: {instanceID: 20168}
     - Class: 114
-      Script: {instanceID: 7216}
+      Script: {instanceID: 20358}
     - Class: 114
-      Script: {instanceID: 36290}
+      Script: {instanceID: 20620}
     - Class: 114
-      Script: {instanceID: 48832}
+      Script: {instanceID: 20938}
+    - Class: 114
+      Script: {instanceID: 21094}
+    - Class: 114
+      Script: {instanceID: 21200}
+    - Class: 114
+      Script: {instanceID: 21428}
+    - Class: 114
+      Script: {instanceID: 21878}
+    - Class: 114
+      Script: {instanceID: 22230}
+    - Class: 114
+      Script: {instanceID: 22292}
+    - Class: 114
+      Script: {instanceID: 23308}
+    - Class: 114
+      Script: {instanceID: 23312}
+    - Class: 114
+      Script: {instanceID: 23316}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -185,6 +202,18 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 2f2940c7cd96d0ef6a45caab938c62f4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PanelSignUp
+  - hash:
+      serializedVersion: 2
+      Hash: 09472b4eb62789127221733025ef6831
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerManager
   - hash:
       serializedVersion: 2
       Hash: 55060a7bf226ac385ce19ebd450f199f
@@ -221,6 +250,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: f834b5c9fa190d894b78375b46706c43
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PanelInGame
   - hash:
       serializedVersion: 2
       Hash: 8703b6ae2b0eefd9dafbc44d8d333fb1
@@ -493,7 +528,13 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExit2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 50c7f9ce6412d07360836895b2e9f4e8
+      Hash: 5658d8504f6b9dff67f2e2d3568b900b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Menu
+  - hash:
+      serializedVersion: 2
+      Hash: 000e0c80cced1923ae74c787b5193897
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Client
@@ -503,6 +544,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Flow
     namespaceName: Unity.VisualScripting
     className: ScriptGraphAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 6ee2afd29e2ace067515fc4b3cdb92e2
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PanelSignIn
   - hash:
       serializedVersion: 2
       Hash: fb79e95da8891fc7ac6c36ca6967af23
@@ -577,6 +624,12 @@ ScriptsOnlyBuild:
     className: UnityOnJointBreak2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 5a5a0764c8b9f7283a5b134ff88908e7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PanelChat
+  - hash:
+      serializedVersion: 2
       Hash: 9ebc0a3016506a0cbb7e0306dfcb9497
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -601,16 +654,16 @@ ScriptsOnlyBuild:
     className: UnityOnCancelMessageListener
   - hash:
       serializedVersion: 2
+      Hash: a05c5601aea2c8ac30d5ac4b8cbac900
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UiController
+  - hash:
+      serializedVersion: 2
       Hash: 7e9cad7f71f9cc52f699bbd2d2a75734
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerClickMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 1a9c31ea506d52e050b546b7fd411601
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SignInUi
   - hash:
       serializedVersion: 2
       Hash: 0b63f6d3335e11939ce8790b904c8691
@@ -787,6 +840,12 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: 130bb623636d8fb26e3f175735a8eaef
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: InputFieldPanel
+  - hash:
+      serializedVersion: 2
       Hash: da5a949a0bbd2ff91bc51c5805c2c41f
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -863,6 +922,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: VerticalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: c803a79c58f328e8a2682c415c20df05
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ApiClient
   - hash:
       serializedVersion: 2
       Hash: c4b85a67513b4f0cf7b5fb2d5ded04b0
@@ -955,7 +1020,7 @@ ScriptsOnlyBuild:
     className: SpawnManager
   - hash:
       serializedVersion: 2
-      Hash: 2bd2c565684a0641a6a2c495c4725b23
+      Hash: 621e4ceade5b6600ffe785f43e9c9106
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Player
@@ -1057,16 +1122,22 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 6a982318c121f0aefb471a56d110e5f3
+      Hash: 27c0fdabd2d2baf5eff8ec9c5a99cb3f
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: ChatRoom
+    className: SocketManager
   - hash:
       serializedVersion: 2
-      Hash: 22c55c3b20cbfdc790a280966e8402c6
+      Hash: b3f5d5ef50ef57f276b58cd964d05116
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: SignUpUi
+    className: MainPlayer
+  - hash:
+      serializedVersion: 2
+      Hash: 602a45a1e18a00f86dec8f3129bd8bc1
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: MessageHandler
   platform: 19
   scenePathNames:
   - Assets/Scenes/ClientScene.unity

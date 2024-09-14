@@ -1,4 +1,5 @@
-﻿using MyLibrary;
+﻿using MessagePack;
+using MyLibrary;
 using Newtonsoft.Json;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,13 +30,12 @@ public class PanelChat : MonoBehaviour, IPanel
     private void OnSendMessage()
     {
         string message = inputField.text;
-        MyDataRequest dataRequest = new MyDataRequest();
+        
         MessageText messageText = new MessageText(client.playerManager.myPlayer.Id, message);
 
-        dataRequest.Content = JsonConvert.SerializeObject(messageText);
-        dataRequest.Type = MyMessageType.TEXT;
-        string messageFinally = JsonConvert.SerializeObject(dataRequest);
-        var t = client.socketManager.SendMessageToServer(messageFinally);
+        byte[] data = MessagePackSerializer.Serialize(messageText);
+
+        client.socketManager.SendMessageToServer(client.messageHandler.SendMessageConverted(MyMessageType.TEXT, data));
     }
 
 
