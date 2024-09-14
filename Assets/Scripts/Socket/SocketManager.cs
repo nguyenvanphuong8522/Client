@@ -24,26 +24,17 @@ public class SocketManager :MonoBehaviour
         socket = new Socket(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
         await socket.ConnectAsync(ipEndPoint);
 
-        SendMessageToServer();
+        SayHiServer();
 
     }
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            SendMessageToServer();
-        }
-    }
-    public void SendMessageToServer()
+    public void SayHiServer()
     {
         byte[] data = MessagePackSerializer.Serialize(new MessagePosition(1, new MyVector3()));
         Debug.Log(data.Length);
-        byte[] mainData = MyUtility.SendMessageConverted(MyMessageType.CREATE, data);
+        byte[] mainData = MyUtility.ConvertFinalMessageToBytes(MyMessageType.CREATE, data);
         
         SendMessageToServer(mainData);
     }
-
-
 
 
     public async Task WaitReceiveRequest()
@@ -68,11 +59,6 @@ public class SocketManager :MonoBehaviour
         }
     }
 
-    public async Task SendMessageToServer(string message)
-    {
-        byte[] sendBuffer = Encoding.UTF8.GetBytes($"{message}@");
-        await socket.SendAsync(sendBuffer, SocketFlags.None);
-    }
     public void SendMessageToServer(byte[] bytes)
     {
         socket.Send(bytes);

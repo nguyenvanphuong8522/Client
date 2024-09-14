@@ -57,18 +57,17 @@ public class PlayerManager : MonoBehaviour
         listOfPlayer.Remove(player);
     }
 
+    public void DestroyAllPlayers()
+    {
+        foreach (Player player in listOfPlayer)
+        {
+            Destroy(player.gameObject);
+        }
+        listOfPlayer.Clear();
+    }
+
     public void DestroyPlayer(Player player)
     {
         Destroy(player.gameObject);
-    }
-    public void NotifyPlayerDestroyed(Client socketManager, Player myPlayer)
-    {
-        MessagePosition newMessagePosition = new MessagePosition { id = myPlayer.Id };
-        MyDataRequest dataRequest = new MyDataRequest
-        {
-            Content = JsonConvert.SerializeObject(newMessagePosition),
-            Type = MyMessageType.DESTROY
-        };
-        client.socketManager.SendMessageToServer(JsonConvert.SerializeObject(dataRequest));
     }
 }

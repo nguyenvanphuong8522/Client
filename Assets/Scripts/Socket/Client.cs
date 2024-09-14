@@ -28,14 +28,6 @@ public class Client : MonoBehaviour
         apiClient = GetComponent<ApiClient>();
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            Disconnect();
-        }
-    }
-
     public async void Connect()
     {
         bool exists = await apiClient.Login();
@@ -49,16 +41,27 @@ public class Client : MonoBehaviour
         }
         Debug.LogError("Invalid User or Password");
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Disconnect();
+        }
+    }
 
     public async Task Disconnect()
     {
         byte[] content = MessagePackSerializer.Serialize(new MessageBase(playerManager.myPlayer.Id));
-        byte[] result = MyUtility.SendMessageConverted(MyMessageType.DESTROY, content);
-        socketManager.SendMessageToServer(result);
+        byte[] result = MyUtility.ConvertFinalMessageToBytes(MyMessageType.DESTROY, content);
+        await Task.Run(() => socketManager.SendMessageToServer(result));
+        await UniTask.SwitchToMainThread();
+        playerManager.DestroyAllPlayers();
+        socketManager.CloseConnection();
+        await UniTask.SwitchToThreadPool();
     }
-    private async void OnDestroy()
+    private async Task OnDestroy()
     {
-        await Disconnect();
+          await Disconnect() ;
     }
 }
 

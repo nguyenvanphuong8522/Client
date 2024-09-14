@@ -22,12 +22,13 @@ public class MainPlayer : MonoBehaviour
     private void FixedUpdate()
     {
         if (!client.canPlay) return;
+        if(client.playerManager.myPlayer == null) return;
         if (client.playerManager.myPlayer.horizontalInput != 0 || client.playerManager.myPlayer.verticalInput != 0)
         {
             Vector3 newPos = client.playerManager.myPlayer.transform.position;
             MessagePosition messagePosition = new MessagePosition(client.playerManager.myPlayer.Id, new MyVector3(newPos.x, newPos.y, newPos.z));
             byte[] data = MessagePackSerializer.Serialize(messagePosition);
-            byte[] result = MyUtility.SendMessageConverted(MyMessageType.POSITION, data);
+            byte[] result = MyUtility.ConvertFinalMessageToBytes(MyMessageType.POSITION, data);
             client.socketManager.SendMessageToServer(result);
         }
     }

@@ -10,12 +10,12 @@ public class MessageHandler : MonoBehaviour
 {
     [SerializeField] private PlayerManager playerManager;
     [SerializeField] private PanelChat chatRoom;
+    [SerializeField] private SocketManager socketManager;
 
     public MyMessageType ByteToType(byte value)
     {
         byte[] bytes = { value };
-        MyMessageType type = MessagePackSerializer.Deserialize<MyMessageType>(bytes);
-        return type;
+        return ByteToType(bytes);
     }
     public MyMessageType ByteToType(byte[] value)
     {

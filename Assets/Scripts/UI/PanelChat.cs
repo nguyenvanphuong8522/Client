@@ -35,7 +35,7 @@ public class PanelChat : MonoBehaviour, IPanel
 
         byte[] data = MessagePackSerializer.Serialize(messageText);
 
-        client.socketManager.SendMessageToServer(MyUtility.SendMessageConverted(MyMessageType.TEXT, data));
+        client.socketManager.SendMessageToServer(MyUtility.ConvertFinalMessageToBytes(MyMessageType.TEXT, data));
     }
 
 
