@@ -18,7 +18,7 @@ public class ApiClient : MonoBehaviour
 
     private void Awake()
     {
-        url = "https://localhost:7245/api/Account/login";
+        url = "https://nvphuong.io.vn/api/Category";
         _httpClient = new HttpClient();
     }
 

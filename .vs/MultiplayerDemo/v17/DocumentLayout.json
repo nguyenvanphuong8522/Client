@@ -1,46 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\",
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|c:\\users\\phuong\\projects\\multiplayerdemo\\assets\\scripts\\ui\\panelsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12F44184-A422-5F27-22E6-507969043F15}|Assembly-CSharp.csproj|c:\\users\\admin\\mydata\\unity documents\\projects\\client\\assets\\scripts\\apiservice\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12F44184-A422-5F27-22E6-507969043F15}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\apiservice\\apiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\socket\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{12F44184-A422-5F27-22E6-507969043F15}|Assembly-CSharp.csproj|c:\\users\\admin\\mydata\\unity documents\\projects\\client\\assets\\scripts\\utility\\clientutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12F44184-A422-5F27-22E6-507969043F15}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\utility\\clientutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\assets\\scripts\\utility\\clientutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\utility\\clientutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12F44184-A422-5F27-22E6-507969043F15}|Assembly-CSharp.csproj|c:\\users\\admin\\mydata\\unity documents\\projects\\client\\assets\\scripts\\ui\\panelsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12F44184-A422-5F27-22E6-507969043F15}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\assets\\scripts\\socket\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\socket\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|c:\\users\\phuong\\projects\\multiplayerdemo\\assets\\scripts\\socket\\mainplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\assets\\scripts\\socket\\mainplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\socket\\mainplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|c:\\users\\phuong\\projects\\multiplayerdemo\\assets\\scripts\\ui\\panelchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\assets\\scripts\\ui\\panelchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\socket\\socketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\assets\\scripts\\socket\\socketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\socket\\socketmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\socket\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\assets\\scripts\\socket\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\socket\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\assets\\scripts\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\models\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\assets\\scripts\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\manager\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\assets\\scripts\\manager\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\spawnmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\utility\\clientutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\utility\\clientutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,90 +62,111 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\Client.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Socket\\Client.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Socket\\Client.cs",
-              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\Client.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Socket\\Client.cs",
               "RelativeToolTip": "Assets\\Scripts\\Socket\\Client.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAQwE0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-11T02:17:45.527Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ApiClient.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\ApiService\\ApiClient.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ApiService\\ApiClient.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\ApiService\\ApiClient.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ApiService\\ApiClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T17:39:14.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClientUtility.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Utility\\ClientUtility.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Utility\\ClientUtility.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Utility\\ClientUtility.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Utility\\ClientUtility.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-09T17:39:00.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PanelSignUp.cs",
-              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelSignUp.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\UI\\PanelSignUp.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PanelSignUp.cs",
-              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelSignUp.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\UI\\PanelSignUp.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\PanelSignUp.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBwAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-13T04:04:38.314Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "PanelChat.cs",
-              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelChat.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\UI\\PanelChat.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PanelChat.cs",
-              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelChat.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\UI\\PanelChat.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\PanelChat.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAwwCUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T04:04:17.22Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T04:04:17.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SocketManager.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Socket\\SocketManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Socket\\SocketManager.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Socket\\SocketManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Socket\\SocketManager.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAIA0wBoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T03:35:31.797Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SocketManager.cs",
-              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\SocketManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Socket\\SocketManager.cs",
-              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\SocketManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Socket\\SocketManager.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAIA0wBoAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T03:35:31.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "PlayerManager.cs",
-              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\PlayerManager.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Socket\\PlayerManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Socket\\PlayerManager.cs",
-              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\PlayerManager.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Socket\\PlayerManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Socket\\PlayerManager.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAgwDUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T02:27:11.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T02:27:11.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Socket\\MainPlayer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Socket\\MainPlayer.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Socket\\MainPlayer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Socket\\MainPlayer.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwBwAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T07:48:48.358Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainPlayer.cs",
-              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\MainPlayer.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Socket\\MainPlayer.cs",
-              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\MainPlayer.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Socket\\MainPlayer.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAQwBwAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-12T07:48:48.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "ClientUtility.cs",
-              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Utility\\ClientUtility.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Utility\\ClientUtility.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Utility\\ClientUtility.cs",
-              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Utility\\ClientUtility.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Utility\\ClientUtility.cs",
               "RelativeToolTip": "Assets\\Scripts\\Utility\\ClientUtility.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -145,11 +174,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Models\\Player.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Models\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Models\\Player.cs",
-              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Models\\Player.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Models\\Player.cs",
               "RelativeToolTip": "Assets\\Scripts\\Models\\Player.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -157,11 +186,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "SpawnManager.cs",
-              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Manager\\SpawnManager.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Manager\\SpawnManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\SpawnManager.cs",
-              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Manager\\SpawnManager.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Manager\\SpawnManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Manager\\SpawnManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -169,11 +198,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Account.cs",
-              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Models\\Account.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Models\\Account.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Models\\Account.cs",
-              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Models\\Account.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\MyData\\Unity Documents\\Projects\\Client\\Assets\\Scripts\\Models\\Account.cs",
               "RelativeToolTip": "Assets\\Scripts\\Models\\Account.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

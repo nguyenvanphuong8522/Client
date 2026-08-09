@@ -4,13 +4,15 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using MyLibrary;
 using UnityEngine;
 using Unity.VisualScripting;
 using Newtonsoft.Json.Linq;
 using System.Linq;
 using MessagePack;
 using System.Collections;
+using Shared.Messages;
+using Shared.Network;
+using Shared.Math;
 
 public class SocketManager :MonoBehaviour
 {
@@ -20,7 +22,7 @@ public class SocketManager :MonoBehaviour
 
     public async Task InitSocket()
     {
-        ipEndPoint = new IPEndPoint(IPAddress.Parse("192.168.1.25"), 8522);
+        ipEndPoint = new IPEndPoint(IPAddress.Parse("192.168.197.1"), 8522);
         socket = new Socket(ipEndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
         await socket.ConnectAsync(ipEndPoint);
 
@@ -29,9 +31,9 @@ public class SocketManager :MonoBehaviour
     }
     public void SayHiServer()
     {
-        byte[] data = MessagePackSerializer.Serialize(new MessagePosition(1, new MyVector3()));
+        byte[] data = MessagePackSerializer.Serialize(new MessagePosition(1, new MyVector3(0, 0, 0)));
         Debug.Log(data.Length);
-        byte[] mainData = MyUtility.ConvertFinalMessageToBytes(MyMessageType.CREATE, data);
+        byte[] mainData = PacketUtility.BuildPacket(MyMessageType.CREATE, data);
         
         SendMessageToServer(mainData);
     }

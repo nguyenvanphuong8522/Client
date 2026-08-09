@@ -8,8 +8,9 @@ using UnityEngine;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Linq;
-using MyLibrary;
 using MessagePack;
+using Shared.Network;
+using Shared.Messages;
 public class Client : MonoBehaviour
 {
     public PlayerManager playerManager;
@@ -52,7 +53,7 @@ public class Client : MonoBehaviour
     public async Task Disconnect()
     {
         byte[] content = MessagePackSerializer.Serialize(new MessageBase(playerManager.myPlayer.Id));
-        byte[] result = MyUtility.ConvertFinalMessageToBytes(MyMessageType.DESTROY, content);
+        byte[] result = PacketUtility.BuildPacket(MyMessageType.DESTROY, content);
         await Task.Run(() => socketManager.SendMessageToServer(result));
         await UniTask.SwitchToMainThread();
         playerManager.DestroyAllPlayers();

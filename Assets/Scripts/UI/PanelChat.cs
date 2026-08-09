@@ -1,9 +1,11 @@
 ﻿using MessagePack;
-using MyLibrary;
 using Newtonsoft.Json;
+using Shared.Messages;
+using Shared.Network;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,11 +33,12 @@ public class PanelChat : MonoBehaviour, IPanel
     {
         string message = inputField.text;
         
-        MessageText messageText = new MessageText(client.playerManager.myPlayer.Id, message);
-
+        MessageText messageText = new MessageText();
+        messageText.Id = client.playerManager.myPlayer.Id;
+        messageText.Text = message;
         byte[] data = MessagePackSerializer.Serialize(messageText);
 
-        client.socketManager.SendMessageToServer(MyUtility.ConvertFinalMessageToBytes(MyMessageType.TEXT, data));
+        client.socketManager.SendMessageToServer(PacketUtility.BuildPacket(MyMessageType.TEXT, data));
     }
 
 

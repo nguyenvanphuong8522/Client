@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using Newtonsoft.Json;
-using MyLibrary;
+using Shared.Messages;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -20,12 +20,12 @@ public class PlayerManager : MonoBehaviour
 
     public Player CreatePlayer(MessagePosition data)
     {
-        if (!HasPlayer(data.id))
+        if (!HasPlayer(data.Id))
         {
-            Vector3 newPos = new Vector3(data.Position.x, data.Position.y, data.Position.z);
+            Vector3 newPos = new Vector3(data.Position.X, data.Position.Y, data.Position.Z);
             Player newPlayer = spawnManager.GetPrefab(newPos);
-            newPlayer.Id = data.id;
-            newPlayer.gameObject.name = $"Player{data.id}";
+            newPlayer.Id = data.Id;
+            newPlayer.gameObject.name = $"Player{data.Id}";
 
             if (myPlayer == null)
             {

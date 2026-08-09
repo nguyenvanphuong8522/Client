@@ -2,9 +2,10 @@
 using UnityEngine;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using MyLibrary;
 using MessagePack;
 using System;
+using Shared.Network;
+using Shared.Messages;
 
 public class MessageHandler : MonoBehaviour
 {
@@ -34,25 +35,25 @@ public class MessageHandler : MonoBehaviour
 
             case MyMessageType.POSITION:
                 MessagePosition newMessagePosition = MessagePackSerializer.Deserialize<MessagePosition>(data);
-                Player player = playerManager.HasPlayer(newMessagePosition.id) ? playerManager.listOfPlayer.Find(x => x.Id == newMessagePosition.id) : null;
+                Player player = playerManager.HasPlayer(newMessagePosition.Id) ? playerManager.listOfPlayer.Find(x => x.Id == newMessagePosition.Id) : null;
 
                 if (player != null && player.Id != playerManager.myPlayer.Id)
                 {
                     await UniTask.SwitchToMainThread();
-                    player.UpdatePosition(new Vector3(newMessagePosition.Position.x, newMessagePosition.Position.y, newMessagePosition.Position.z));
+                    player.UpdatePosition(new Vector3(newMessagePosition.Position.X, newMessagePosition.Position.Y, newMessagePosition.Position.Z));
                     await UniTask.SwitchToThreadPool();
                 }
                 break;
 
             case MyMessageType.TEXT:
                 MessageText messageText = MessagePackSerializer.Deserialize<MessageText>(data);
-                chatRoom.UpdateContentChatBox(messageText.text);
+                chatRoom.UpdateContentChatBox(messageText.Text);
                 break;
             case MyMessageType.DESTROY:
                 MessageBase messageDestroy = MessagePackSerializer.Deserialize<MessageBase>(data);
-                Debug.Log($"Client[{messageDestroy.id}] disconnected!");
+                Debug.Log($"Client[{messageDestroy.Id}] disconnected!");
                 await UniTask.SwitchToMainThread();
-                playerManager.RemovePlayer(messageDestroy.id);
+                playerManager.RemovePlayer(messageDestroy.Id);
                 await UniTask.SwitchToThreadPool();
                 break;
             default:

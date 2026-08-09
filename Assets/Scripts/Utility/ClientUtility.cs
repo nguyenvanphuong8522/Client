@@ -1,4 +1,4 @@
-using MyLibrary;
+using Shared.Math;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

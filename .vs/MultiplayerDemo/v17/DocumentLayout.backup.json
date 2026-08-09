@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|c:\\users\\phuong\\projects\\multiplayerdemo\\assets\\scripts\\ui\\panelsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\panelsignup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\assets\\scripts\\socket\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D6FB9C7-1A10-D587-5BB0-927B60E5AE5B}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\socket\\playermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -46,11 +50,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Client.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\Client.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Socket\\Client.cs",
@@ -64,7 +68,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "PanelSignUp.cs",
+              "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelSignUp.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PanelSignUp.cs",
+              "ToolTip": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelSignUp.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI\\PanelSignUp.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T04:04:38.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PanelChat.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\UI\\PanelChat.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\PanelChat.cs",
@@ -77,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SocketManager.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\SocketManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Socket\\SocketManager.cs",
@@ -90,7 +107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "PlayerManager.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\PlayerManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Socket\\PlayerManager.cs",
@@ -103,7 +120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainPlayer.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Socket\\MainPlayer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Socket\\MainPlayer.cs",
@@ -116,7 +133,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ClientUtility.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Utility\\ClientUtility.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Utility\\ClientUtility.cs",
@@ -128,7 +145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Models\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Models\\Player.cs",
@@ -140,7 +157,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "SpawnManager.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Manager\\SpawnManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\SpawnManager.cs",
@@ -152,7 +169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Users\\Phuong\\Projects\\MultiplayerDemo\\Assets\\Scripts\\Models\\Account.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Models\\Account.cs",
